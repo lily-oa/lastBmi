@@ -5,3 +5,37 @@ engine: ejs
 current: index
 ---
 
+<div class="warp">
+  <div id="top"></div>
+  <div class="header">
+    <h1 class="bmiLogo">BMI Calculator</h1>
+    <div class="heightWeight">
+      <form action="index.html">
+        <label for="height">身高 cm</label>
+        <input 
+          type="number" 
+          class="height"
+          name="height"
+          id="height"
+          placeholder="請輸入你的身高"
+        >
+        <span class="heightAlert"></span>
+        <label for="weight">體重 kg</label>
+        <input 
+          type="number"
+          class="weight"
+          name="weight"
+          id="weight"
+          placeholder="請輸入你的體重"
+        >
+      </form>
+    </div>
+    <input class="calculate" type="button" value="Calculate">
+    <div class="reCalculate"></div>
+    <h3 class="assessResult"></h3>
+  </div>
+
+  <div class="content">
+    
+  </div>
+</div>
