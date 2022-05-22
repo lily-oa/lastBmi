@@ -12179,5 +12179,9 @@ img {
 
 /*-- layout --*/
 /*-- pages --*/
+.warp {
+  margin: 0 auto;
+  width: 100%;
+}
 
 /*# sourceMappingURL=all.css.map */
