@@ -1,1 +1,10 @@
-@import './layout/_index.scss';
+/*-- bs引入檔 --*/
+@import 'helpers/bootstrap.scss';
+/*-- setting --*/
+/*-- config --*/
+@import 'config/reset';
+@import 'config/base';
+/*-- layout --*/
+@import 'layout/footer';
+/*-- pages --*/
+@import 'pages/index';
