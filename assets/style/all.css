@@ -12167,7 +12167,14 @@ html {
 }
 
 body {
-  font-family: '微軟正黑體';
+  font-family: Roboto , -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+img {
+  width: 100%;
+  display: block;
 }
 
 /*-- layout --*/
