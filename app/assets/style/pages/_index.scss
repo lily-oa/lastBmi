@@ -1,4 +1,12 @@
-.warp{
+.wrap{
   margin: 0 auto;
   width: 100%;
+}
+
+.header{
+  height: 300px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

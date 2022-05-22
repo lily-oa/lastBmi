@@ -62,20 +62,28 @@ $colors: (
   "cyan":       $cyan,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-800,
 ) !default;
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #00cc99; // $blue !default;
+$primary:       #FFD366 ; // $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
-// scss-docs-end theme-color-variables
+$light:         #efefef !default;
+$dark:          #424242 !default;
+$mediumObese:   #ff6c03 !default;
+$ideal:         #86D73F !default;
+$thin:          #31BAF9 !default;
+$heavy:         #FF982D !default;
+$slightlyObese: #FF6C03 !default;
+$mediumObese:   #FF6C03 !default;
+$severeObese:   #FF1200 !default;
+
+// scss-docs-end theme-color-variable
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
@@ -86,7 +94,13 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "mediumObese": $mediumObese,
+  "ideal":       $ideal,
+  "thin":        $thin,
+  "heavy":       $heavy,
+  "slightlyObese": $slightlyObese,
+  "severeObese":   $severeObese,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -250,11 +264,18 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25,  //4
+  2: $spacer * .5,   //8
+  3: $spacer,        //16
+  4: $spacer * 1.25, //20
+  5: $spacer * 1.5,  //24
+  6: $spacer * 1.75, //28
+  7: $spacer * 2,    //32
+  8: $spacer * 2.25, //36
+  9: $spacer * 2.5,  //40
+  10: $spacer * 2.75, //44
+  11: $spacer * 3,    //48
+  12: $spacer * 1.125,//18
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -447,16 +468,30 @@ $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
+$h7-font-size:                $font-size-base * 1.125!default;
+$h8-font-size:                $font-size-base * 1.25!default;
+$h9-font-size:                $font-size-base * 0.75!default;
+$h10-font-size:                $font-size-base * 0.875!default;
+$h11-font-size:                $font-size-base * 2.25!default;
+$h12-font-size:                $font-size-base * 0.625!default;
+$h13-font-size:                $font-size-base * 0.5!default;
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
+  1: $h1-font-size,  //40
+  2: $h2-font-size,  //32
+  3: $h3-font-size,  //28
+  4: $h4-font-size,  //24
+  5: $h5-font-size,  //20
+  6: $h6-font-size,  //16
+  7: $h7-font-size,  //18
+  8: $h8-font-size,  //20
+  9: $h9-font-size,  //12
+  10: $h10-font-size, //14
+  11: $h11-font-size, //36
+  12: $h12-font-size, //10
+  13: $h13-font-size, //8
 ) !default;
 // scss-docs-end font-sizes
 
