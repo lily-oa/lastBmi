@@ -15568,11 +15568,6 @@ body {
   font-weight: normal;
 }
 
-img {
-  width: 100%;
-  display: block;
-}
-
 /*-- layout --*/
 /*-- pages --*/
 .wrap {
@@ -15582,7 +15577,7 @@ img {
 
 .header {
   height: 300px;
-  background-color: #fff;
+  background-color: #424242;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15592,6 +15587,15 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.bmiLogo {
+  width: 117px;
+  height: 117px;
+  background: url(../images/BMILogo2.png) no-repeat top;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=all.css.map */
