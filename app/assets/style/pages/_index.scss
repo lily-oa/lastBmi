@@ -5,8 +5,17 @@
 
 .header{
   height: 300px;
-  background-color: $primary;
+  background-color: $dark;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bmiLogo {
+  width: 117px;
+  height: 117px;
+  background: url(../images/BMILogo2.png) no-repeat top;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
 }
