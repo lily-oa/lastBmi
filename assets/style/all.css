@@ -15568,6 +15568,11 @@ body {
   font-weight: normal;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 /*-- layout --*/
 /*-- pages --*/
 .wrap {
@@ -15592,7 +15597,7 @@ body {
 .bmiLogo {
   width: 117px;
   height: 117px;
-  background: url(../images/BMILogo2.png) no-repeat top;
+  background: url(../images/BMICLogo2.png) no-repeat top;
   text-indent: 101%;
   white-space: nowrap;
   overflow: hidden;
