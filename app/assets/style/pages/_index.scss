@@ -24,3 +24,15 @@
 .heightWeight{
   margin: 0 10%;
 }
+
+.heightWeight input{
+  display: block;  //設定為區塊
+  width: 250px;
+  background-color: rgba(255,255,255,0.18);
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid $primary;
+  padding: 5px 15px;
+  line-height: 28px;
+  margin-top: 8px;
+}
