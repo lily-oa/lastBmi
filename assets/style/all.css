@@ -15619,4 +15619,36 @@ img {
   margin-top: 8px;
 }
 
+.heightAlert, .weightAlert {
+  display: block;
+  color: #ff0000;
+  height: 18px;
+  margin: 10px 0;
+}
+
+.heightWeight input::-webkit-outer-spin-button,
+.heightWeight input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.heightWeight input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.heightWeight input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.heightWeight label {
+  font-size: 18px;
+  color: #FFD366;
+  line-height: 21px;
+}
+
+.assessResult {
+  margin-left: 20px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
 /*# sourceMappingURL=all.css.map */
