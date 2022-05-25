@@ -22,11 +22,11 @@
 }
 
 .heightWeight{
-  margin: 0 10%;
+  margin: 0 10%; //左右各留10%的空白
 }
 
 .heightWeight input{
-  display: block;  //設定為區塊
+  display: block;  //設定為區塊，input部份可上下呈現
   width: 250px;
   background-color: rgba(255,255,255,0.18);
   border-radius: 10px;
@@ -36,3 +36,38 @@
   line-height: 28px;
   margin-top: 8px;
 }
+
+.heightAlert, .weightAlert{
+  display: block;
+  color: #ff0000;
+  height: 18px;
+  margin: 10px 0;
+}
+
+// 此段的設定是為了要隱藏
+.heightWeight input::-webkit-outer-spin-button,
+.heightWeight input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+
+.heightWeight input[type="number"]{
+  -moz-appearance:textfield;
+}
+
+.heightWeight input::-webkit-input-placeholder{
+  color: rgba(255,255,255,0.5);
+}
+
+.heightWeight label{
+  font-size: 18px;
+  color: $primary;
+  line-height: 21px;
+}
+
+//按鈕按下後出現的體重訊息文字
+.assessResult{
+  margin-left: 20px;
+  font-size: 32px;
+  line-height: 38px;
+}
+
