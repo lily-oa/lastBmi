@@ -94,3 +94,22 @@
   box-shadow: 0px 0px 2px 1px $darkPrimary;
   background-color: $darkPrimary;
 }
+
+// 此為js部份，點擊計算後新增新的按鈕(顯示bmi數字的按鈕，大小和原黃色背景的按鈕一樣)
+.reCalculateBt{
+  background-color: $dark;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+}
+
+// 點擊後reCalculateBt裡的重新整理小按鈕
+.smallCircle {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid $dark; // 小按鈕的外框線
+}
