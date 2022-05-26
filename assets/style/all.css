@@ -15801,4 +15801,21 @@ img {
   background-color: #dea821;
 }
 
+.reCalculateBt {
+  background-color: #424242;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.smallCircle {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #424242;
+}
+
 /*# sourceMappingURL=all.css.map */
