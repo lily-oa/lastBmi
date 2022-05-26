@@ -82,6 +82,7 @@ $heavy:         #FF982D !default;
 $slightlyObese: #FF6C03 !default;
 $mediumObese:   #FF6C03 !default;
 $severeObese:   #FF1200 !default;
+$darkPrimary:   #dea821 !default;
 
 // scss-docs-end theme-color-variable
 
@@ -101,6 +102,7 @@ $theme-colors: (
   "heavy":       $heavy,
   "slightlyObese": $slightlyObese,
   "severeObese":   $severeObese,
+  "darkPrimary":   $darkPrimary,
 ) !default;
 // scss-docs-end theme-colors-map
 
