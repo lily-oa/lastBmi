@@ -15818,4 +15818,41 @@ img {
   border: 3px solid #424242;
 }
 
+.smallCircle::before {
+  display: table;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 19px;
+  right: 19%;
+  top: 12%;
+  background-image: url(../images/icons_loop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;
+}
+
+.reCalculateBt:hover {
+  cursor: pointer;
+}
+
+.reCalculateBt:hover .smallCircle::before {
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
 /*# sourceMappingURL=all.css.map */
