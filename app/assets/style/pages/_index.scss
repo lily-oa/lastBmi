@@ -113,3 +113,35 @@
   border-radius: 50%;
   border: 3px solid $dark; // 小按鈕的外框線
 }
+
+.smallCircle::before{
+  display: table;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 19px;
+  right: 19%;
+  top: 12%;
+  background-image: url(../images/icons_loop.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;
+}
+
+.reCalculateBt:hover {
+  cursor: pointer;
+}
+
+//小按鈕hover時會一直轉動
+.reCalculateBt:hover .smallCircle::before{
+  animation: spin 1.5s linear infinite;
+}
+
+//小按鈕動畫部份
+@keyframes spin{
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+// Calculate按鈕按下去後，顯示bmi數字部份
