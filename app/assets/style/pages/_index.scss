@@ -26,11 +26,11 @@
 }
 
 .heightWeight input{
-  display: block;  //設定為區塊，input部份可上下呈現
+  display: block;  //設定為區塊，呈現自動換行效果
   width: 250px;
   background-color: rgba(255,255,255,0.18);
   border-radius: 10px;
-  outline: none;
+  outline: none;  //外框線:無
   border: 2px solid $primary;
   padding: 5px 15px;
   line-height: 28px;
@@ -115,17 +115,17 @@
 }
 
 .smallCircle::before{
-  display: table;
+  display: table;  //讓小按鈕裡的icon和它的底圈呈現垂真置中
   content: '';
   position: absolute;
   width: 14px;
   height: 19px;
-  right: 19%;
+  right: 20%;
   top: 12%;
-  background-image: url(../images/icons_loop.png);
+  background-image: url(../images/icons_loop.png); //使用背景圖的方式
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 99;
+  z-index: 99; //使icon置於最上方
 }
 
 .reCalculateBt:hover {
@@ -137,11 +137,16 @@
   animation: spin 1.5s linear infinite;
 }
 
-//小按鈕動畫部份
+//小按鈕動畫部份，spin是動畫名稱
 @keyframes spin{
   100%{
-    transform: rotate(-360deg);
+    transform: rotate(-360deg); //360度旋轉
   }
 }
 
 // Calculate按鈕按下去後，顯示bmi數字部份
+.bmiResult{
+  font-size: 32px;
+  line-height: 38px;
+  color: #86d73f;
+}
