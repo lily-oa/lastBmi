@@ -151,14 +151,14 @@
 .bmiResult{
   font-size: 32px;
   line-height: 38px;
-  color: $lightGreen;
+  color: $ideal;
 }
 // Calculate按鈕按下去，顯示圈圈裡 BMI文字部份
 .reCalculateBt span{
   display: block; // 區塊元素，自動換行
   font-size: $h10-font-size;  //14
   line-height: 17px;
-  color: $lightGreen;
+  color: $ideal;
 }
 
 //---------------------------------------------------------------end
