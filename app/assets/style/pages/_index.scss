@@ -50,6 +50,7 @@
   -webkit-appearance: none;
 }
 
+//input[type="number"]驗証輸入類型為數字，拒絕非數字輸入
 .heightWeight input[type="number"]{
   -moz-appearance:textfield;
 }
@@ -75,7 +76,7 @@
 .calculate {
   width: 120px;
   height: 120px;
-  font-size: $h4-font-size;
+  font-size: $h4-font-size;  //24
   border-radius: 50%;
   border: none;
   color: $dark;
@@ -94,6 +95,8 @@
   box-shadow: 0px 0px 2px 1px $darkPrimary;
   background-color: $darkPrimary;
 }
+
+//---------------------------------------------------js寫入的排版變化
 
 // 此為js部份，點擊計算後新增新的按鈕(顯示bmi數字的按鈕，大小和原黃色背景的按鈕一樣)
 .reCalculateBt{
@@ -134,7 +137,7 @@
 
 //小按鈕hover時會一直轉動
 .reCalculateBt:hover .smallCircle::before{
-  animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;  //infinite:無限循環
 }
 
 //小按鈕動畫部份，spin是動畫名稱
@@ -148,9 +151,22 @@
 .bmiResult{
   font-size: 32px;
   line-height: 38px;
-  color: #86d73f;
+  color: $lightGreen;
 }
+// Calculate按鈕按下去，顯示圈圈裡 BMI文字部份
 .reCalculateBt span{
-
+  display: block; // 區塊元素，自動換行
+  font-size: $h10-font-size;  //14
+  line-height: 17px;
+  color: $lightGreen;
 }
 
+//---------------------------------------------------------------end
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
