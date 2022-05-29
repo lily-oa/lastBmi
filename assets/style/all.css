@@ -15858,7 +15858,31 @@ img {
 .bmiResult {
   font-size: 32px;
   line-height: 38px;
-  color: #86d73f;
+  color: #86D73F;
+}
+
+.reCalculateBt span {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 17px;
+  color: #86D73F;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f4f4f4;
 }
 
 /*# sourceMappingURL=all.css.map */
