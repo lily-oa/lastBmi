@@ -15824,7 +15824,7 @@ img {
   position: absolute;
   width: 14px;
   height: 19px;
-  right: 19%;
+  right: 20%;
   top: 12%;
   background-image: url(../images/icons_loop.png);
   background-repeat: no-repeat;
@@ -15853,6 +15853,12 @@ img {
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg);
   }
+}
+
+.bmiResult {
+  font-size: 32px;
+  line-height: 38px;
+  color: #86d73f;
 }
 
 /*# sourceMappingURL=all.css.map */
