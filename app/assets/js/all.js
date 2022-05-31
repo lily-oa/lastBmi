@@ -54,4 +54,16 @@ function calculateBMI(){
   }
   
   let cm = parseFloat(height.value).toFixed(1); //取到小數第一位
+  let m = parseFloat((cm/100).toFixed(2));      //取到小數第二位
+  let kg = parseFloat(weight.value);
+  let BMI = parseFloat((kg/(m*m)).toFixed(1));  //取到小數第一位
+  let assessment = '';
+  let color = '';
+  let time = new Date();
+  let year = time.getFullYear();
+  let month = time.getMonth()+1;
+  let date = time.getDate();
+  let today = month+'-'+date+'-'+year;
+//判斷BMI以及對應顏色
+
 }
