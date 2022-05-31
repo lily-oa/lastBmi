@@ -53,4 +53,5 @@ function calculateBMI(){
       return;
   }
   
+  let cm = parseFloat(height.value).toFixed(1); //取到小數第一位
 }
