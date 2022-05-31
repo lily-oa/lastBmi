@@ -53,5 +53,7 @@ function calculateBMI() {
       weightAlert.textContent = '請填上你的體重(kg)';
       return;
   }
+
+  var cm = parseFloat(height.value).toFixed(1); //取到小數第一位
 }
 //# sourceMappingURL=all.js.map
