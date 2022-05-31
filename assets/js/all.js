@@ -55,5 +55,18 @@ function calculateBMI() {
   }
 
   var cm = parseFloat(height.value).toFixed(1); //取到小數第一位
+
+  var m = parseFloat((cm / 100).toFixed(2)); //取到小數第二位
+
+  var kg = parseFloat(weight.value);
+  var BMI = parseFloat((kg / (m * m)).toFixed(1)); //取到小數第一位
+
+  var assessment = '';
+  var color = '';
+  var time = new Date();
+  var year = time.getFullYear();
+  var month = time.getMonth() + 1;
+  var date = time.getDate();
+  var today = month + '-' + date + '-' + year; //判斷BMI以及對應顏色
 }
 //# sourceMappingURL=all.js.map
