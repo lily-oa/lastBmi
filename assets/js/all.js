@@ -52,11 +52,12 @@ function calculateBMI() {
       heightAlert.textContent = '請填上你的身高(cm)';
       weightAlert.textContent = '請填上你的體重(kg)';
       return;
-  }
+  } //BMI值計算公式: BMI = 體重(公斤) / 身高2(公尺2)
+
 
   var cm = parseFloat(height.value).toFixed(1); //取到小數第一位
 
-  var m = parseFloat((cm / 100).toFixed(2)); //取到小數第二位
+  var m = parseFloat((cm / 100).toFixed(2)); //取到小數第二位，身高為公尺(m)
 
   var kg = parseFloat(weight.value);
   var BMI = parseFloat((kg / (m * m)).toFixed(1)); //取到小數第一位
