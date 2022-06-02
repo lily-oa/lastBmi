@@ -4,7 +4,8 @@
 var height = document.querySelector('.height');
 var weight = document.querySelector('.weight');
 var calculate = document.querySelector('.calculate');
-var records = document.querySelector('.records');
+var records = document.querySelector('.records'); //記錄區塊ul
+
 var deleteAll = document.querySelector('.deleteAll');
 var assessResult = document.querySelector('.assessResult'); //評詁結果文字
 
@@ -14,7 +15,8 @@ var data = JSON.parse(localStorage.getItem('bodyIndex')) || []; //--------------
 
 var totalPages = Math.ceil(data.length / contentLen); //取整數回傳回來(向上捨入)
 
-var page = document.querySelector('.page'); // 設定監聽事件
+var page = document.querySelector('.page'); //頁數的ul
+// 設定監聽事件
 
 calculate.addEventListener('click', calculateBMI); // records.addEventListener('click', deleteRecords);
 // deleteAll.addEventListener('click', deleteAllRecords);
@@ -69,5 +71,50 @@ function calculateBMI() {
   var month = time.getMonth() + 1;
   var date = time.getDate();
   var today = month + '-' + date + '-' + year; //判斷BMI以及對應顏色
+
+  switch (true) {
+    case BMI < 18.5:
+      assessment = '過輕';
+      color = '#31BAf9';
+      break;
+
+    case BMI >= 18.5 && BMI < 24:
+      assessment = '正常';
+      color = '#86D73f';
+      break;
+
+    case BMI >= 24 && BMI < 27:
+      assessment = '輕度過重';
+      color = '#ff982d';
+      break;
+
+    case BMI >= 27 && BMI < 30:
+      assessment = '過重';
+      color = '#ff6c03';
+      break;
+
+    case BMI >= 30 && BMI < 35:
+      assessment = '中度肥胖';
+      color = '#ff5f03';
+      break;
+
+    case BMI >= 35:
+      assessment = '重度肥胖';
+      color = '#ff1200';
+      break;
+  } // 將資料寫入新的陣列並將推入Data物件中
+
+
+  var BMIobject = {
+    borderColor: color,
+    assess: assessment,
+    bmi: BMI,
+    weight: kg,
+    height: cm,
+    currentDate: today
+  };
+  assessResult.textContent = BMIobject.assess;
+  assessResult.style.color = BMIobject.borderColor;
+  data.push(BMIobject);
 }
 //# sourceMappingURL=all.js.map
