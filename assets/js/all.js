@@ -115,6 +115,6 @@ function calculateBMI() {
   };
   assessResult.textContent = BMIobject.assess;
   assessResult.style.color = BMIobject.borderColor;
-  data.push(BMIobject);
+  data.push(BMIobject); // 帶入總頁數是希望不管用戶目前在第幾頁，只要新增新的資料就會跳至最後一頁方便看新的記錄
 }
 //# sourceMappingURL=all.js.map
