@@ -5,7 +5,7 @@ let calculate = document.querySelector('.calculate');
 let records = document.querySelector('.records'); //記錄區塊ul
 let deleteAll = document.querySelector('.deleteAll');
 let assessResult = document.querySelector('.assessResult'); //評詁結果文字
-const contentLen = 5; //每頁最多5筆資料，不容變動
+const contentLen = 5; //每頁最多5筆資料，不可變動
 let data = JSON.parse(localStorage.getItem('bodyIndex')) || [];
 
 //-------------- 關於頁數的設定 ------------------------------------------------
@@ -58,13 +58,14 @@ function calculateBMI(){
   let m = parseFloat((cm/100).toFixed(2));      //取到小數第二位，身高為公尺(m)
   let kg = parseFloat(weight.value);
   let BMI = parseFloat((kg/(m*m)).toFixed(1));  //取到小數第一位
-  let assessment = '';
+  let assessment = ''; //評估文字
   let color = '';
   let time = new Date();
   let year = time.getFullYear();
   let month = time.getMonth()+1;
   let date = time.getDate();
   let today = month+'-'+date+'-'+year;
+
 //判斷BMI以及對應顏色
   switch(true){
     case BMI<18.5:
@@ -117,8 +118,8 @@ let BMIobject = {
   changeButton(BMIobject);
 //隱藏計算機按鈕
 calculate.style.display = 'none';
-//更新LocalStorage的資料
-localStorage.setItem('bodyIndex',JSON.stringify(data));
+//更新LocalStorage的資料，轉為字串存入localStorage
+localStorage.setItem('bodyIndex',JSON.stringify(data)); 
 }
 
 // 將資料渲染在內容上
@@ -129,5 +130,40 @@ function updateRecords(data, num1){
     localStorage.setItem('bodyIndex', JSON.stringify(data));
     updateRecords(data);
     return;
+  }
+
+// 當有兩筆資料以上時，才會顯示出刪除全部紀錄的選項
+  let str = '';
+  let len = data.length;
+  let content = document.querySelector('.content');
+  if(len>1){
+    deleteAll.style.display = 'block';
+    content.style.paddingBottom = 'unset';  //找不到 paddingBottom，不明白為何這樣寫!
+  }else{
+    deleteAll.style.display = 'none';
+    content.style.paddingBottom = "30px"; 
+  }
+
+// 分頁邏輯，num2為抓取起始點，num3為結束點
+  let num2 = (num1-1)*contentLen;
+  let num3 = num1*contentLen;
+// num3不可超過資料總數
+if(num3>data.length){
+  num3 = data.length;
+  }
+// 資料渲染  
+  for(let i=num2; i<num3; i++){
+    str +=`
+    <li data-number="${i}" style="border-left:7px solid ${data[i].borderColor};">
+      <h3>${data[i].assess}</h3>
+      <div class="data">
+        <p>BMI<span>${data[i].bmi}</span></p>
+        <p>weight<span>${data[i].weight}Kg</span></p>
+        <p>height<span>${data[i].height}Cm</span></p>
+        <p>${data[i].currentDate}</p>
+      </div>
+      <a></a>
+    </li>
+    `
   }
 }
