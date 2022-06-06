@@ -14,13 +14,13 @@ let page = document.querySelector('.page'); //頁數的ul
 
 // 設定監聽事件
 calculate.addEventListener('click', calculateBMI);
-// records.addEventListener('click', deleteRecords);
-// deleteAll.addEventListener('click', deleteAllRecords);
-// page.addEventListener('click', switchPage);  //切換頁面
+records.addEventListener('click', deleteRecords);
+deleteAll.addEventListener('click', deleteAllRecords);
+page.addEventListener('click', switchPage);  //切換頁面
 
 //網頁載入後預先執行第一頁內容
-// updateRecords(data, 1);
-// pageColor(1);
+updateRecords(data, 1);
+pageColor(1);
 
 //點擊計算按鈕觸發
 function calculateBMI(){
@@ -173,3 +173,87 @@ if(num3>data.length){
 }
 
 //點擊計算後新增新的按鈕
+function changeButton(BMIobject){
+  reCalculate.innerHTML =
+  `
+  <button class="reCalculateBt" style="border:6px solid ${BMIobject.borderColor};">
+    <p class="bmiResult" style="color:${BMIobject.borderColor}">${BMIobject.bmi}<span style="color:${BMIobject.borderColor}">BMI</span></p>
+    <div class="smallCircle" style="background-color:${BMIobject.borderColor};"></div>
+  </button>
+  `;
+}
+
+//點擊重新計算刪除當前按鈕，並重新顯示原本的按鈕
+let reCalculate = document.querySelector('.reCalculate');
+reCalculate.addEventListener('click', deleteButton);
+
+function deleteButton(){
+  reCalculate.innerHTML = '';
+  height.value = '';
+  weight.value = '';
+  assessResult.textContent = '';
+  calculate.style.display = 'unset';  //按鈕樣式跟隨父元素
+}
+
+// 點擊垃圾桶刪除所選資料
+function deleteRecords(e){
+  e.preventDefault();
+  if(e.target.nodeName !== 'A'){
+    return;
+  }
+  let number = e.target.dataset.number;
+  data.splice(number, 1);
+  localStorage.setItem('bodyIndex', JSON.stringify(data));
+  totalPages = Math.ceil(data.length/contentLen);
+  let num = parseInt(e.target.dataset.number); //字串轉換成整數
+  if(num == data.length){
+    num -= 1;
+  }
+  let currentPage = Math.ceil((num+1)/contentLen);
+  updateRecords(data, currentPage);
+  pageColor(currentPage); 
+}
+
+// 刪除全部資料
+function deleteAllRecords(e){
+  data = [];
+  localStorage.setItem('bodyIndex', JSON.stringify(data));
+  updateRecords(data);
+}
+
+// 分頁渲染
+function pagination(){
+  totalPages = Math.ceil(data.length/contentLen);
+
+  let str = '';
+  page.innerHTML = '';
+
+  for(let i=0; i<totalPages; i++){
+    // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 243行的backgroundColor無法執行？
+    str += `
+      <li><a href="#" class="pagination" data-number="${(i+1)}">${(i+1)}</a></li>
+    `;
+  }
+  page.innerHTML = str;
+}  
+
+// 切換頁數
+let currentPage = '';
+function switchPage(e){
+  e.preventDefault();
+  if(e.target.nodeName !== "A"){
+    return;
+  }
+  currentPage = e.target.dataset.number;
+  updateRecords(data, currentPage);
+  pageColor(currentPage);
+}
+
+// 當前頁數上的顏色渲染
+function pageColor(e){
+  if(data.length<1){
+    return;
+  }
+  totalPages = Math.ceil(data.length/contentLen);
+  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';
+}
