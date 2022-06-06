@@ -5,7 +5,7 @@ let calculate = document.querySelector('.calculate');
 let records = document.querySelector('.records'); //記錄區塊ul
 let deleteAll = document.querySelector('.deleteAll');
 let assessResult = document.querySelector('.assessResult'); //評詁結果文字
-const contentLen = 5; //每頁最多5筆資料
+const contentLen = 5; //每頁最多5筆資料，不容變動
 let data = JSON.parse(localStorage.getItem('bodyIndex')) || [];
 
 //-------------- 關於頁數的設定 ------------------------------------------------
@@ -112,5 +112,22 @@ let BMIobject = {
   data.push(BMIobject);
 
 // 帶入總頁數是希望不管用戶目前在第幾頁，只要新增新的資料就會跳至最後一頁方便看新的記錄
+  totalPages = Math.ceil(data.length/contentLen);
+  updateRecords(data, totalPages);
+  changeButton(BMIobject);
+//隱藏計算機按鈕
+calculate.style.display = 'none';
+//更新LocalStorage的資料
+localStorage.setItem('bodyIndex',JSON.stringify(data));
+}
 
+// 將資料渲染在內容上
+function updateRecords(data, num1){
+// 若是最大頁數為0，沒有資料，則清空物件以及內容。以防止剩最後一筆資料時按刪除鈕產生的錯誤
+  if(num1==0){
+    data = [];
+    localStorage.setItem('bodyIndex', JSON.stringify(data));
+    updateRecords(data);
+    return;
+  }
 }
