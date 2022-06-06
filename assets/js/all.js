@@ -9,7 +9,7 @@ var records = document.querySelector('.records'); //記錄區塊ul
 var deleteAll = document.querySelector('.deleteAll');
 var assessResult = document.querySelector('.assessResult'); //評詁結果文字
 
-var contentLen = 5; //每頁最多5筆資料，不容變動
+var contentLen = 5; //每頁最多5筆資料，不可變動
 
 var data = JSON.parse(localStorage.getItem('bodyIndex')) || []; //-------------- 關於頁數的設定 ------------------------------------------------
 
@@ -64,7 +64,8 @@ function calculateBMI() {
   var kg = parseFloat(weight.value);
   var BMI = parseFloat((kg / (m * m)).toFixed(1)); //取到小數第一位
 
-  var assessment = '';
+  var assessment = ''; //評估文字
+
   var color = '';
   var time = new Date();
   var year = time.getFullYear();
@@ -121,7 +122,7 @@ function calculateBMI() {
   updateRecords(data, totalPages);
   changeButton(BMIobject); //隱藏計算機按鈕
 
-  calculate.style.display = 'none'; //更新LocalStorage的資料
+  calculate.style.display = 'none'; //更新LocalStorage的資料，轉為字串存入localStorage
 
   localStorage.setItem('bodyIndex', JSON.stringify(data));
 } // 將資料渲染在內容上
@@ -134,6 +135,32 @@ function updateRecords(data, num1) {
     localStorage.setItem('bodyIndex', JSON.stringify(data));
     updateRecords(data);
     return;
+  } // 當有兩筆資料以上時，才會顯示出刪除全部紀錄的選項
+
+
+  var str = '';
+  var len = data.length;
+  var content = document.querySelector('.content');
+
+  if (len > 1) {
+    deleteAll.style.display = 'block';
+    content.style.paddingBottom = 'unset'; //找不到 paddingBottom，不明白為何這樣寫!
+  } else {
+    deleteAll.style.display = 'none';
+    content.style.paddingBottom = "30px";
+  } // 分頁邏輯，num2為抓取起始點，num3為結束點
+
+
+  var num2 = (num1 - 1) * contentLen;
+  var num3 = num1 * contentLen; // num3不可超過資料總數
+
+  if (num3 > data.length) {
+    num3 = data.length;
+  } // 資料渲染  
+
+
+  for (var i = num2; i < num3; i++) {
+    str += "\n    <li data-number=\"".concat(i, "\" style=\"border-left:7px solid ").concat(data[i].borderColor, ";\">\n      <h3>").concat(data[i].assess, "</h3>\n      <div class=\"data\">\n        <p>BMI<span>").concat(data[i].bmi, "</span></p>\n        <p>weight<span>").concat(data[i].weight, "Kg</span></p>\n        <p>height<span>").concat(data[i].height, "Cm</span></p>\n        <p>").concat(data[i].currentDate, "</p>\n      </div>\n      <a></a>\n    </li>\n    ");
   }
 }
 //# sourceMappingURL=all.js.map
