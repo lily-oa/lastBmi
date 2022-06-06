@@ -160,7 +160,10 @@ function updateRecords(data, num1) {
 
 
   for (var i = num2; i < num3; i++) {
-    str += "\n    <li data-number=\"".concat(i, "\" style=\"border-left:7px solid ").concat(data[i].borderColor, ";\">\n      <h3>").concat(data[i].assess, "</h3>\n      <div class=\"data\">\n        <p>BMI<span>").concat(data[i].bmi, "</span></p>\n        <p>weight<span>").concat(data[i].weight, "Kg</span></p>\n        <p>height<span>").concat(data[i].height, "Cm</span></p>\n        <p>").concat(data[i].currentDate, "</p>\n      </div>\n      <a></a>\n    </li>\n    ");
+    str += "\n    <li data-number=\"".concat(i, "\" style=\"border-left:7px solid ").concat(data[i].borderColor, ";\">\n      <h3>").concat(data[i].assess, "</h3>\n      <div class=\"data\">\n        <p>BMI<span>").concat(data[i].bmi, "</span></p>\n        <p>weight<span>").concat(data[i].weight, "Kg</span></p>\n        <p>height<span>").concat(data[i].height, "Cm</span></p>\n        <p>").concat(data[i].currentDate, "</p>\n      </div>\n      <a href='#' data-number='").concat(i, "' style='padding: 5px;'>\n        <img src=\"./assets/images/trash.png\" alt=\"recyleBinIcon\" style=\"width:16px; height:18px; pointer-events:none;\">\n      </a>\n    </li>\n    ");
   }
-}
+
+  ;
+  records.innerHTML = str; // pagination();
+} //點擊計算後新增新的按鈕
 //# sourceMappingURL=all.js.map
