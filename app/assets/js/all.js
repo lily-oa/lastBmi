@@ -162,8 +162,14 @@ if(num3>data.length){
         <p>height<span>${data[i].height}Cm</span></p>
         <p>${data[i].currentDate}</p>
       </div>
-      <a></a>
+      <a href='#' data-number='${i}' style='padding: 5px;'>
+        <img src="./assets/images/trash.png" alt="recyleBinIcon" style="width:16px; height:18px; pointer-events:none;">
+      </a>
     </li>
     `
-  }
+  };
+  records.innerHTML = str;
+  // pagination();
 }
+
+//點擊計算後新增新的按鈕
