@@ -230,9 +230,7 @@ function pagination(){
 
   for(let i=0; i<totalPages; i++){
     // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 243行的backgroundColor無法執行？
-    str += `
-      <li><a href="#" class="pagination" data-number="${(i+1)}">${(i+1)}</a></li>
-    `;
+    str += `<li><a href="#" class="pagination" data-number="${(i+1)}">${(i+1)}</a></li>`;
   }
   page.innerHTML = str;
 }  
