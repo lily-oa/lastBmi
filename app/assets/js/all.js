@@ -153,8 +153,7 @@ if(num3>data.length){
   }
 // 資料渲染  
   for(let i=num2; i<num3; i++){
-    str +=`
-    <li data-number="${i}" style="border-left:7px solid ${data[i].borderColor};">
+    str +=`<li data-number="${i}" style="border-left:7px solid ${data[i].borderColor};">
       <h3>${data[i].assess}</h3>
       <div class="data">
         <p>BMI<span>${data[i].bmi}</span></p>
@@ -165,8 +164,7 @@ if(num3>data.length){
       <a href='#' data-number='${i}' style='padding: 5px;'>
         <img src="./assets/images/trash.png" alt="recyleBinIcon" style="width:16px; height:18px; pointer-events:none;">
       </a>
-    </li>
-    `
+    </li>`
   };
   records.innerHTML = str;
   // pagination();
@@ -174,13 +172,10 @@ if(num3>data.length){
 
 //點擊計算後新增新的按鈕
 function changeButton(BMIobject){
-  reCalculate.innerHTML =
-  `
-  <button class="reCalculateBt" style="border:6px solid ${BMIobject.borderColor};">
+  reCalculate.innerHTML =`<button class="reCalculateBt" style="border:6px solid ${BMIobject.borderColor};">
     <p class="bmiResult" style="color:${BMIobject.borderColor}">${BMIobject.bmi}<span style="color:${BMIobject.borderColor}">BMI</span></p>
     <div class="smallCircle" style="background-color:${BMIobject.borderColor};"></div>
-  </button>
-  `;
+  </button>`;
 }
 
 //點擊重新計算刪除當前按鈕，並重新顯示原本的按鈕
