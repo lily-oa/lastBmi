@@ -222,7 +222,7 @@ function pagination() {
   page.innerHTML = '';
 
   for (var i = 0; i < totalPages; i++) {
-    // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 243行的backgroundColor無法執行？
+    // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 256行的backgroundColor無法執行？
     str += "<li><a href=\"#\" class=\"pagination\" data-number=\"".concat(i + 1, "\">").concat(i + 1, "</a></li>");
   }
 
