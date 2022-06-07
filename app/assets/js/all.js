@@ -229,7 +229,7 @@ function pagination(){
   page.innerHTML = '';
 
   for(let i=0; i<totalPages; i++){
-    // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 243行的backgroundColor無法執行？
+    // 使用樣板字面值寫法，但是在li後面換行會造成程式碼錯誤？讓JS 256行的backgroundColor無法執行？
     str += `<li><a href="#" class="pagination" data-number="${(i+1)}">${(i+1)}</a></li>`;
   }
   page.innerHTML = str;
@@ -249,7 +249,7 @@ function switchPage(e){
 
 // 當前頁數上的顏色渲染
 function pageColor(e){
-  if(data.length<1){
+  if(data.length < 1){
     return;
   }
   totalPages = Math.ceil(data.length/contentLen);
