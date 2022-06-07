@@ -20,7 +20,7 @@ page.addEventListener('click', switchPage);  //切換頁面
 
 //網頁載入後預先執行第一頁內容
 updateRecords(data, 1);
-pageColor(1);
+// pageColor(1);
 
 //點擊計算按鈕觸發
 function calculateBMI(){
@@ -239,14 +239,14 @@ function switchPage(e){
   }
   currentPage = e.target.dataset.number;
   updateRecords(data, currentPage);
-  pageColor(currentPage);
+  // pageColor(currentPage);
 }
 
 // 當前頁數上的顏色渲染
-function pageColor(e){
-  if(data.length < 1){
-    return;
-  }
-  totalPages = Math.ceil(data.length/contentLen);
-  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';
-}
+// function pageColor(e){
+//   if(data.length < 1){
+//     return;
+//   }
+//   totalPages = Math.ceil(data.length/contentLen);
+//   page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';
+// }
