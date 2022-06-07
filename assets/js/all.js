@@ -161,7 +161,7 @@ function updateRecords(data, num1) {
 
 
   for (var i = num2; i < num3; i++) {
-    str += "\n    <li data-number=\"".concat(i, "\" style=\"border-left:7px solid ").concat(data[i].borderColor, ";\">\n      <h3>").concat(data[i].assess, "</h3>\n      <div class=\"data\">\n        <p>BMI<span>").concat(data[i].bmi, "</span></p>\n        <p>weight<span>").concat(data[i].weight, "Kg</span></p>\n        <p>height<span>").concat(data[i].height, "Cm</span></p>\n        <p>").concat(data[i].currentDate, "</p>\n      </div>\n      <a href='#' data-number='").concat(i, "' style='padding: 5px;'>\n        <img src=\"./assets/images/trash.png\" alt=\"recyleBinIcon\" style=\"width:16px; height:18px; pointer-events:none;\">\n      </a>\n    </li>\n    ");
+    str += "<li data-number=\"".concat(i, "\" style=\"border-left:7px solid ").concat(data[i].borderColor, ";\">\n      <h3>").concat(data[i].assess, "</h3>\n      <div class=\"data\">\n        <p>BMI<span>").concat(data[i].bmi, "</span></p>\n        <p>weight<span>").concat(data[i].weight, "Kg</span></p>\n        <p>height<span>").concat(data[i].height, "Cm</span></p>\n        <p>").concat(data[i].currentDate, "</p>\n      </div>\n      <a href='#' data-number='").concat(i, "' style='padding: 5px;'>\n        <img src=\"./assets/images/trash.png\" alt=\"recyleBinIcon\" style=\"width:16px; height:18px; pointer-events:none;\">\n      </a>\n    </li>");
   }
 
   ;
@@ -170,7 +170,7 @@ function updateRecords(data, num1) {
 
 
 function changeButton(BMIobject) {
-  reCalculate.innerHTML = "\n  <button class=\"reCalculateBt\" style=\"border:6px solid ".concat(BMIobject.borderColor, ";\">\n    <p class=\"bmiResult\" style=\"color:").concat(BMIobject.borderColor, "\">").concat(BMIobject.bmi, "<span style=\"color:").concat(BMIobject.borderColor, "\">BMI</span></p>\n    <div class=\"smallCircle\" style=\"background-color:").concat(BMIobject.borderColor, ";\"></div>\n  </button>\n  ");
+  reCalculate.innerHTML = "<button class=\"reCalculateBt\" style=\"border:6px solid ".concat(BMIobject.borderColor, ";\">\n    <p class=\"bmiResult\" style=\"color:").concat(BMIobject.borderColor, "\">").concat(BMIobject.bmi, "<span style=\"color:").concat(BMIobject.borderColor, "\">BMI</span></p>\n    <div class=\"smallCircle\" style=\"background-color:").concat(BMIobject.borderColor, ";\"></div>\n  </button>");
 } //點擊重新計算刪除當前按鈕，並重新顯示原本的按鈕
 
 
