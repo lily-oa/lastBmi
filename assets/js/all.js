@@ -243,9 +243,8 @@ function switchPage(e) {
   currentPage = e.target.dataset.number;
   updateRecords(data, currentPage);
   pageColor(currentPage);
-}
+} // 當前頁數上的顏色渲染
 
-當前頁數上的顏色渲染;
 
 function pageColor(e) {
   if (data.length < 1) {
