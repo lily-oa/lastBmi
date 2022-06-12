@@ -248,5 +248,5 @@ function pageColor(e){
     return;
   }
   totalPages = Math.ceil(data.length/contentLen);
-  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';
+  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';  //看不懂
 }
