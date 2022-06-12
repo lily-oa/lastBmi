@@ -138,10 +138,10 @@ function updateRecords(data, num1){
   let content = document.querySelector('.content');
   if(len>1){
     deleteAll.style.display = 'block';
-    content.style.paddingBottom = 'unset';  //找不到 paddingBottom，不明白為何這樣寫!
+    content.style.paddingBottom = 'unset';  //若顯示，下方內距設定未設置
   }else{
     deleteAll.style.display = 'none';
-    content.style.paddingBottom = "30px"; 
+    content.style.paddingBottom = "30px";  //若隱藏，下方內距設置30px
   }
 
 // 分頁邏輯，num2為抓取起始點，num3為結束點
