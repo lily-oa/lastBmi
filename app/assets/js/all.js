@@ -14,7 +14,7 @@ let page = document.querySelector('.page'); //頁數的ul
 
 // 設定監聽事件
 calculate.addEventListener('click', calculateBMI);
-records.addEventListener('click', deleteRecords);
+records.addEventListener('click', deleteRecords); //單筆刪除
 deleteAll.addEventListener('click', deleteAllRecords);
 page.addEventListener('click', switchPage);  //切換頁面
 
@@ -248,5 +248,5 @@ function pageColor(e){
     return;
   }
   totalPages = Math.ceil(data.length/contentLen);
-  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';  //看不懂
+  page.childNodes[e-1].childNodes[0].style.backgroundColor = '#D1bbff';  
 }
