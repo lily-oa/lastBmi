@@ -125,12 +125,12 @@ localStorage.setItem('bodyIndex',JSON.stringify(data));
 // 將資料渲染在內容上
 function updateRecords(data, num1){
 // 若是最大頁數為0，沒有資料，則清空物件以及內容。以防止剩最後一筆資料時按刪除鈕產生的錯誤
-  // if(num1==0){
-  //   data = [];
-  //   localStorage.setItem('bodyIndex', JSON.stringify(data));
-  //   updateRecords(data);
-  //   return;
-  // }
+  if(num1==0){
+    data = [];
+    localStorage.setItem('bodyIndex', JSON.stringify(data));
+    updateRecords(data);
+    return;
+  }
 
 // 當有兩筆資料以上時，才會顯示出刪除全部紀錄的選項
   let str = '';
