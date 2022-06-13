@@ -131,7 +131,7 @@ function updateRecords(data, num1){
     updateRecords(data);
     return;
   }
-
+// ----------------------------------------------------------------------------------6/14看到此
 // 當有兩筆資料以上時，才會顯示出刪除全部紀錄的選項
   let str = '';
   let len = data.length;
