@@ -169,7 +169,7 @@ if(num3>data.length){
   records.innerHTML = str;
   pagination();
 }
-//------------------------------------------------------------------看到此6/15
+
 //點擊計算後新增新的按鈕
 function changeButton(BMIobject){
   reCalculate.innerHTML =`<button class="reCalculateBt" style="border:6px solid ${BMIobject.borderColor};">
