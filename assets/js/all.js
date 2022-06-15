@@ -168,8 +168,7 @@ function updateRecords(data, num1) {
   ;
   records.innerHTML = str;
   pagination();
-} //------------------------------------------------------------------看到此6/15
-//點擊計算後新增新的按鈕
+} //點擊計算後新增新的按鈕
 
 
 function changeButton(BMIobject) {
