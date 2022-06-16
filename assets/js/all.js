@@ -146,7 +146,7 @@ function updateRecords(data, num1) {
 
   if (len > 1) {
     deleteAll.style.display = 'block';
-    content.style.paddingBottom = 'unset'; //若顯示，下方內距設定未設置
+    content.style.paddingBottom = 'unset'; //若顯示，下方內距設定跟隨父元素，若無父元素則重設為初始值
   } else {
     deleteAll.style.display = 'none';
     content.style.paddingBottom = "30px"; //若隱藏，下方內距設置30px
