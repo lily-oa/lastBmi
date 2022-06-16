@@ -197,7 +197,7 @@ function deleteRecords(e){
     return;
   }
   let number = e.target.dataset.number;
-  data.splice(number, 1);
+  data.splice(number, 1);  //每次刪除一筆
   localStorage.setItem('bodyIndex', JSON.stringify(data));
   totalPages = Math.ceil(data.length/contentLen);
   let num = parseInt(e.target.dataset.number); //字串轉換成整數
