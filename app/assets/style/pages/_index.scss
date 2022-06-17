@@ -273,4 +273,67 @@
   background-color: #CCDDFF;
 }
 
-//-------------------設定版型 768以上時的設定-----------------
+//-------------------設定版型 768以下時的設定----------------------------
+@media only screen and (max-width:768px){
+  .header{
+    display: flex;  
+    flex-direction: column;
+    height: 560px;
+  }
+
+  .heightWeight{
+    margin-top: 10px;
+  }
+
+  .records{
+    width: 70%;
+  }
+
+  .records li{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+
+  .data{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .data p{
+    text-align: center;
+    transform: translateX(-50px); //平移
+    margin-bottom: 10px;
+  }
+
+  .data p:nth-child(4){
+    transform: unset;
+  }
+
+  .data p:nth-child(1) span{
+    margin-left: 22px;
+  }
+
+  .data span{
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+    margin-left: 15px;
+  }
+
+  .records h3{
+    width: auto;
+    margin: unset;
+  }
+
+  .assessResult{
+    margin-left: unset;
+    margin: 10px 0;
+  }
+
+  .heightWeight input{
+    width: 55vw;
+  }
+}
