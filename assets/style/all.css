@@ -15999,4 +15999,78 @@ img {
   background-color: #CCDDFF;
 }
 
+@media only screen and (max-width: 768px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 560px;
+  }
+  .heightWeight {
+    margin-top: 10px;
+  }
+  .records {
+    width: 70%;
+  }
+  .records li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0px;
+  }
+  .data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 15px;
+  }
+  .data p {
+    text-align: center;
+    -webkit-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+            transform: translateX(-50px);
+    margin-bottom: 10px;
+  }
+  .data p:nth-child(4) {
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
+  }
+  .data p:nth-child(1) span {
+    margin-left: 22px;
+  }
+  .data span {
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+    margin-left: 15px;
+  }
+  .records h3, .records .h3 {
+    width: auto;
+    margin: unset;
+  }
+  .assessResult {
+    margin-left: unset;
+    margin: 10px 0;
+  }
+  .heightWeight input {
+    width: 55vw;
+  }
+}
+
 /*# sourceMappingURL=all.css.map */
